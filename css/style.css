@@ -1,0 +1,96 @@
+:root {
+    --maincolor: blue;
+}
+
+body {
+    background-color: darkblue;
+}
+
+#mainnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid black;
+}
+
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+nav button {
+    background-color: var(--maincolor);
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    transition: background-color 0.3s;
+    width: 110%;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav button:hover {
+    background-color: gold;
+}
+
+.image-box {
+    display: grid;
+    gap: 0.5rem;
+    padding: 2rem 0.5rem;
+    background-color: var(--maincolor);
+    border: 2px solid black;
+    margin-bottom: 1rem;
+}
+
+.image-box h2 {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+}
+.image-column {
+    background-color: #e74c3c;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 2fr 1fr 0.5fr;
+}
+
+.image-column img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    padding-bottom: 1rem;
+}
+
+article {
+    background-color: var(--maincolor);
+    padding: 4rem;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 600px) {
+
+  }
