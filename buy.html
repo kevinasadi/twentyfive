@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Köp bil</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="buy-container">
+    <!-- Car details will be inserted here -->
+  </div>
+
+  <script>
+    // Retrieve the car information from session storage.
+    const carData = sessionStorage.getItem("selectedCar");
+    if (!carData) {
+      // If no car is selected, redirect back or show an error.
+      document.getElementById('buy-container').innerHTML = '<p>No car data found. Please go back and select a car.</p>';
+    } else {
+      const car = JSON.parse(carData);
+      // Create HTML elements to display the car's details.
+      const container = document.getElementById('buy-container');
+
+      const title = document.createElement('h1');
+      title.textContent = "Köp " + car.name;
+      container.appendChild(title);
+
+      const img = document.createElement('img');
+      img.src = car.image;
+      img.alt = car.name;
+      container.appendChild(img);
+
+      const price = document.createElement('p');
+      price.innerHTML = `<strong>Pris:</strong> ${car.price}`;
+      container.appendChild(price);
+
+      // You can add more details as needed.
+      const description = document.createElement('p');
+      description.innerHTML = `<em>${car.name} - A great choice!</em>`;
+      container.appendChild(description);
+
+      // Optional: a button to confirm the purchase or further proceed.
+      const buyButton = document.createElement('button');
+      buyButton.textContent = "Bekräfta köp";
+      buyButton.onclick = () => {
+        // Handle purchase logic here.
+        alert("Tack för ditt köp!");
+      };
+      container.appendChild(buyButton);
+    }
+  </script>
+</body>
+</html>
+    

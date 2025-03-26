@@ -1,31 +1,33 @@
+/* Studentbilar site updated styling to mimic the art site image-column */
 :root {
     --maincolor: blue;
-}
-
-body {
+  }
+  
+  body {
     background-color: darkblue;
-}
-
-#mainnav {
+  }
+  
+  /* Navigation remains unchanged */
+  #mainnav {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     width: 100%;
     border: 2px solid black;
-}
-
-
-nav {
+    z-index: 100;
+  }
+  
+  nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     justify-items: center;
     align-items: center;
     width: 100%;
-}
-
-nav button {
+  }
+  
+  nav button {
     background-color: var(--maincolor);
     color: white;
     padding: 1rem;
@@ -37,31 +39,50 @@ nav button {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-}
-
-nav button:hover {
+  }
+  
+  nav button:hover {
     background-color: gold;
-}
-
-.image-box {
-    display: grid;
-    gap: 0.5rem;
-    padding: 2rem 0.5rem;
+  }
+  
+  #price-slider {
+    position: relative;
+    margin: 10px auto 0;
     background-color: var(--maincolor);
-    border: 2px solid black;
-    margin-bottom: 1rem;
-}
-
-.image-box h2 {
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-size: 2.5rem;
     color: white;
+    border: 2px solid black;
+    transition: background-color 0.3s;
+    width: 50%;
+    height: 7rem;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  #visiblecolor {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
-}
-.image-column {
-    background-color: #e74c3c;
+  }
+  
+  #myRange {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #cargrid {
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .image-column {
+    background-color: var(--maincolor);
     border: 2px solid black;
     border-radius: 10px;
     text-align: center;
@@ -69,28 +90,78 @@ nav button:hover {
     margin: auto;
     display: grid;
     grid-template-rows: 2fr 1fr 0.5fr;
-}
-
-.image-column img {
-    width: 200px;
-    height: 250px;
+  }
+  
+  .image-column img {
+    width: 325px;
+    height: 200px;
     object-fit: cover;
     padding-bottom: 1rem;
-}
-
-article {
-    background-color: var(--maincolor);
-    padding: 4rem;
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    border: 2px solid black;
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-@media only screen and (max-width: 600px) {
-
   }
+  .text-container {
+      display: flex;
+      flex-direction: column;  /* Stack content vertically */
+      margin: 0 auto;  
+      padding-bottom: 2rem;
+    }
+  
+  .description {
+    text-align: center;
+    color: white;
+    font-family: "Lora", serif;
+    font-weight: 400;
+  }
+  
+  .image-description {
+    text-align: center;
+    overflow: hidden;
+    color: black;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  .column-footer {
+      display: grid;
+      grid-template-rows: auto auto; /* Stack timer and button vertically */
+      gap: 0.5rem; /* Space between timer and button */
+      align-items: center;
+  }
+  
+  .buy-button {
+    background-color: var(--maincolor);
+    color: white;
+    border: 2px dotted black;
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width:100%;
+  }
+  
+  .buy-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .timer {
+    font-weight: bold;
+    color: yellow;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    #cargrid {
+      margin-top: 3rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .image-column img {
+      width: 150px;
+      height: 200px;
+    }
+    nav button {
+      width: 115%;
+    }
+  }
+  
