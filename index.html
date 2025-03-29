@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <title>Student Cars</title>
+  <title>Studentbilar</title>
 </head>
 <body>
   <div id="mainnav">
     <nav>
-      <button onclick="location.href='nil.html'"><em>Sälj bil</em></button>
-      <button onclick="location.href='nil.html'"><em>Mina köp</em></button>
-      <button onclick="location.href='nil.html'"><em>Hitta bilar</em></button>
+      <button onclick="location.href='sell.html'"><em>Sälj bil</em></button>
+      <button onclick="location.href='#section2'"><em>Mina köp</em></button>
+      <button onclick="location.href='index.html'"><em>Hitta bilar</em></button>
     </nav>
     
-    <input id="price_input" type="range" min="10000" max="250000" step="100" />
-    <p>Value: <output id="value"></output></p>
+  </div>
 
+  <div id="price-slider">
+    <input type="range" id="myRange" min="10000" max="250000" value="50000" step="100">
+    <p id="visiblecolor">Ditt maximala pris är: <span id="rangeValue">10000</span></p>
+</div>
 
+  <div id="cargrid">
+  </div>
 
-
+  <script src="js/bombaclaat.js"></script>
 </body>
 </html>

@@ -1,167 +1,217 @@
 /* Studentbilar site updated styling to mimic the art site image-column */
 :root {
-    --maincolor: blue;
+  --maincolor: blue;
+}
+
+body {
+  background-color: darkblue;
+}
+
+/* Navigation remains unchanged */
+#mainnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid black;
+  z-index: 100;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+}
+
+nav button {
+  background-color: var(--maincolor);
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  transition: background-color 0.3s;
+  width: 110%;
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav button:hover {
+  background-color: gold;
+}
+
+#price-slider {
+  position: relative;
+  margin: 10px auto 0;
+  background-color: var(--maincolor);
+  color: white;
+  border: 2px solid black;
+  transition: background-color 0.3s;
+  width: 50%;
+  height: 7rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.buy-image {
+  width: 500px !important;
+  height: 300px !important;
+}
+
+#visiblecolor {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+#myRange {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#cargrid {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.image-column {
+  background-color: var(--maincolor);
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 2fr 1fr 0.5fr;
+}
+
+.image-column img {
+  width: 325px;
+  height: 200px;
+  object-fit: cover;
+  padding-bottom: 1rem;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;  /* Stack content vertically */
+    margin: 0 auto;  
+    padding-bottom: 2rem;
   }
-  
-  body {
-    background-color: darkblue;
-  }
-  
-  /* Navigation remains unchanged */
-  #mainnav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    border: 2px solid black;
-    z-index: 100;
-  }
-  
-  nav {
+
+.description {
+  text-align: center;
+  color: white;
+  font-family: "Lora", serif;
+  font-weight: 400;
+}
+
+.image-description {
+  text-align: center;
+  overflow: hidden;
+  color: black;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.column-footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    justify-items: center;
+    grid-template-rows: auto auto; /* Stack timer and button vertically */
+    gap: 0.5rem; /* Space between timer and button */
     align-items: center;
-    width: 100%;
-  }
-  
-  nav button {
-    background-color: var(--maincolor);
-    color: white;
-    padding: 1rem;
-    font-size: 1.5rem;
-    border: none;
-    transition: background-color 0.3s;
-    width: 110%;
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  nav button:hover {
-    background-color: gold;
-  }
-  
-  #price-slider {
-    position: relative;
-    margin: 10px auto 0;
-    background-color: var(--maincolor);
-    color: white;
-    border: 2px solid black;
-    transition: background-color 0.3s;
-    width: 50%;
-    height: 7rem;
-    text-align: center;
-    z-index: 1;
-  }
-  
-  #visiblecolor {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-  }
-  
-  #myRange {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
+}
+
+.buy-button {
+  background-color: var(--maincolor);
+  color: white;
+  border: 2px dotted black;
+  border-radius: 5px;
+  padding: 1rem;
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width:100%;
+}
+
+.buy-button:hover {
+  background-color: #c0392b;
+}
+
+.timer {
+  font-weight: bold;
+  color: yellow;
+}
+
+/* New styles for the buy page */
+.buy-container {
+  width: 50%;
+  margin: 50px auto;
+  background-color: var(--maincolor);
+  padding: 40px;
+  border: 2px solid lightblue;
+  border-radius: 15px;
+  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.animate-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.payment-form {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.payment-form input,
+.payment-form button {
+  display: block;
+  width: 70%;
+  margin: 0 auto 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+
+.buy-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.payment-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+
+@media only screen and (max-width: 500px) {
   #cargrid {
-    margin-top: 7rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    align-items: center;
+    margin-top: 3rem;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .image-column {
-    background-color: var(--maincolor);
-    border: 2px solid black;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    margin: auto;
-    display: grid;
-    grid-template-rows: 2fr 1fr 0.5fr;
-  }
-  
   .image-column img {
-    width: 325px;
+    width: 150px;
     height: 200px;
-    object-fit: cover;
-    padding-bottom: 1rem;
   }
-  .text-container {
-      display: flex;
-      flex-direction: column;  /* Stack content vertically */
-      margin: 0 auto;  
-      padding-bottom: 2rem;
-    }
-  
-  .description {
-    text-align: center;
-    color: white;
-    font-family: "Lora", serif;
-    font-weight: 400;
+  nav button {
+    width: 115%;
   }
-  
-  .image-description {
-    text-align: center;
-    overflow: hidden;
-    color: black;
-    font-family: "Lora", serif;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-  
-  .column-footer {
-      display: grid;
-      grid-template-rows: auto auto; /* Stack timer and button vertically */
-      gap: 0.5rem; /* Space between timer and button */
-      align-items: center;
-  }
-  
-  .buy-button {
-    background-color: var(--maincolor);
-    color: white;
-    border: 2px dotted black;
-    border-radius: 5px;
-    padding: 1rem;
-    font-family: "Lora", serif;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width:100%;
-  }
-  
-  .buy-button:hover {
-    background-color: #c0392b;
-  }
-  
-  .timer {
-    font-weight: bold;
-    color: yellow;
-  }
-  
-  @media only screen and (max-width: 500px) {
-    #cargrid {
-      margin-top: 3rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .image-column img {
-      width: 150px;
-      height: 200px;
-    }
-    nav button {
-      width: 115%;
-    }
-  }
-  
+}

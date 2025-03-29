@@ -68,7 +68,7 @@ function updateCarGrid() {
       
       const imageDescription = document.createElement('div');
       imageDescription.className = 'image-description';
-      imageDescription.innerHTML = `<em>${car.name} - A great choice!</em>`;
+      imageDescription.innerHTML = `<em>Ett bra bil val är ${car.name} för studenter!</em>`;
       
       textContainer.appendChild(desc);
       textContainer.appendChild(imgDesc);
