@@ -7,9 +7,8 @@ const cars = [
   { name: 'model3', price: 150000, image: 'img/model3.png' },
   { name: 'troc', price: 50000, image: 'img/troc.png' },
   { name: 'v60', price: 15000, image: 'img/V60.png' },
-  { name: 'audiq6', price: 9000, image: 'img/audiq6.png' },
+  { name: 'audiq6', price: 9000, image: 'img/audiq6.png' }
 ];
-
 
 function getRandomSundayTime() {
   let now = new Date();
@@ -42,41 +41,40 @@ function startCountdown(timerElement, endTime) {
 function updateCarGrid() {
   const selectedPrice = parseInt(slider.value);
   output.textContent = selectedPrice;
-  
   carGrid.innerHTML = '';
-  
+
   cars
     .filter(car => car.price <= selectedPrice)
     .forEach(car => {
       const col = document.createElement('div');
       col.className = 'image-column';
-      
+
       const img = document.createElement('img');
       img.src = car.image;
       img.alt = car.name;
-      
+
       const textContainer = document.createElement('div');
       textContainer.className = 'text-container';
-      
+
       const desc = document.createElement('div');
       desc.className = 'description';
       desc.innerHTML = `<em>${car.name}</em>`;
-      
+
       const imgDesc = document.createElement('div');
       imgDesc.className = 'image-description';
       imgDesc.innerHTML = `<em>Price: ${car.price}</em>`;
-      
+
       const imageDescription = document.createElement('div');
       imageDescription.className = 'image-description';
       imageDescription.innerHTML = `<em>Ett bra bil val är ${car.name} för studenter!</em>`;
-      
+
       textContainer.appendChild(desc);
       textContainer.appendChild(imgDesc);
       textContainer.appendChild(imageDescription);
 
       const footer = document.createElement('div');
       footer.className = 'column-footer';
-      
+
       const btn = document.createElement('button');
       btn.className = 'buy-button';
       btn.textContent = 'Köp';
@@ -84,24 +82,20 @@ function updateCarGrid() {
         sessionStorage.setItem("selectedCar", JSON.stringify(car));
         location.href = 'buy.html';
       };
-      
+
       const timerDiv = document.createElement('div');
       timerDiv.className = 'timer';
-      
       let endTime = getRandomSundayTime();
       startCountdown(timerDiv, endTime);
-      
+
       footer.appendChild(timerDiv);
       footer.appendChild(btn);
-      
       col.appendChild(img);
       col.appendChild(textContainer);
       col.appendChild(footer);
-      
       carGrid.appendChild(col);
     });
 }
 
 slider.addEventListener('input', updateCarGrid);
-
 updateCarGrid();

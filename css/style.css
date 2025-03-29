@@ -1,4 +1,3 @@
-/* Studentbilar site updated styling to mimic the art site image-column */
 :root {
   --maincolor: blue;
 }
@@ -7,7 +6,6 @@ body {
   background-color: darkblue;
 }
 
-/* Navigation remains unchanged */
 #mainnav {
   position: fixed;
   top: 0;
@@ -103,12 +101,13 @@ nav button:hover {
   object-fit: cover;
   padding-bottom: 1rem;
 }
+
 .text-container {
-    display: flex;
-    flex-direction: column;  /* Stack content vertically */
-    margin: 0 auto;  
-    padding-bottom: 2rem;
-  }
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
 
 .description {
   text-align: center;
@@ -127,10 +126,10 @@ nav button:hover {
 }
 
 .column-footer {
-    display: grid;
-    grid-template-rows: auto auto; /* Stack timer and button vertically */
-    gap: 0.5rem; /* Space between timer and button */
-    align-items: center;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .buy-button {
@@ -144,7 +143,7 @@ nav button:hover {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  width:100%;
+  width: 100%;
 }
 
 .buy-button:hover {
@@ -156,7 +155,6 @@ nav button:hover {
   color: yellow;
 }
 
-/* New styles for the buy page */
 .buy-container {
   width: 50%;
   margin: 50px auto;
@@ -187,7 +185,6 @@ nav button:hover {
   font-size: 1rem;
 }
 
-
 .buy-image {
   max-width: 100%;
   height: auto;
@@ -200,7 +197,55 @@ nav button:hover {
   margin-bottom: 20px;
 }
 
+#contact-grid {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
 
+.contact-column {
+  background-color: var(--maincolor);
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.contact-column img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  padding-bottom: 1rem;
+}
+
+#buyhistory-container {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.purchase-item {
+  background-color: var(--maincolor);
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.purchase-item img {
+  width: 325px;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+  padding-bottom: 1rem;
+}
 
 @media only screen and (max-width: 500px) {
   #cargrid {
