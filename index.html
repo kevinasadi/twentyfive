@@ -15,6 +15,20 @@
       <button onclick="location.href='index.html'"><em>Hitta bilar</em></button>
     </nav>
   </div>
+
+  <header id="hero">
+    <div class="hero‑overlay">
+      <h1><em>Välkommen till Studentbilar</em></h1>
+      <p class="tagline">
+        Din snabbaste väg till en prisvärd första‑bil.<br>
+        Bläddra bland hundratals modeller anpassade för student‑plånboken!
+      </p>
+      <button class="cta" onclick="document.getElementById('price-slider').scrollIntoView({behavior:'smooth'});">
+        Börja leta direkt
+      </button>
+    </div>
+  </header>
+
   <div id="price-slider">
     <input type="range" id="myRange" min="10000" max="250000" value="50000" step="100">
     <p id="visiblecolor">Ditt maximala pris är: <span id="rangeValue">10000</span></p>
