@@ -16,6 +16,10 @@ body {
   z-index: 100;
 }
 
+#mainnav h2 {
+  display: none;
+}
+
 nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -34,7 +38,6 @@ nav button {
   transition: background-color 0.3s;
   width: 110%;
   font-family: "Lora", serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -148,7 +151,7 @@ nav button:hover {
 }
 
 .buy-button:hover {
-  background-color: #c0392b;
+  background-color: darkorange;
 }
 
 .timer {
@@ -222,6 +225,10 @@ nav button:hover {
   object-fit: cover;
   object-position: center;
   padding-bottom: 1rem;
+  border: 3px solid #000;       
+  border-radius: 2rem;         
+  padding: 0.1rem;                
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 #buyhistory-container {
@@ -253,7 +260,7 @@ nav button:hover {
   margin-top: 5rem;
   height: 60vh;
   min-height: 350px;
-  background: url("../img/herobg.png") center/cover no-repeat;
+  background: url("../img/herobg.webp") center/cover no-repeat;
   position: relative;
   overflow: hidden;
   border: 2px solid #000;
@@ -274,7 +281,6 @@ nav button:hover {
 #hero h1 {
   color: blue;
   font-family: "Lora", serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   margin-bottom: 0.5rem;
@@ -283,7 +289,6 @@ nav button:hover {
 .tagline {
   color: white;
   font-family: "Lora", serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   margin-bottom: 1.5rem;
@@ -305,17 +310,116 @@ nav button:hover {
   background: #ffd700;
 }
 
+.mobilemenuopen {
+  display: none; 
+  background: transparent;
+  border: none;  
+  padding: 0;   
+  font-size: 2rem;        
+  color: white;            
+  position: fixed;
+  left: 1rem;
+  top: 0.5rem;
+  cursor: pointer;
+  z-index: 5000
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -60%;  
+  width: 60%;
+  height: 100%;
+  background-color: var(--maincolor);
+  border: black solid 2px;
+  z-index: 101;
+  transition: left 0.3s ease;  
+  padding-top: 60px;
+  overflow-y: auto;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.mobile-menu ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #444;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mobile-menu.active {
+  left: 0%;  
+}
+
+.mobile-menu ul li a:hover {
+  background-color: #555;
+  color: #ffd700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
 @media only screen and (max-width: 500px) {
   #cargrid {
     margin-top: 3rem;
     grid-template-columns: repeat(2, 1fr);
   }
-  .image-column img {
-    width: 150px;
-    height: 200px;
+
+  #contact-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+  .image-column img {
+    width: 200px;
+    height: 150px;
+  }
+
+  #buyhistory-container {
+    display: grid;                    
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;                     
+    margin-top: 3rem;                
+  }
+  .buy-image {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+  }
+
+  .mobilemenuopen, .mobile-menu { 
+    display:block;
+   }
+  #mainnav {
+    background-color: var(--maincolor);
+  }
+
+  #mainnav h2 {
+    display: block;
+    visibility: visible;
+    position: absolute; 
+    top: 1rem;              
+    right: 1rem;                
+    margin: 0;                  
+    padding: 0.25rem;    
+    font-size: 1.25rem;         
+    color: white;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-style: normal;        
+   }
+
   nav button {
-    width: 115%;
+   /* width: 115%; */
+   visibility: hidden;
   }
   #hero {
     height: 45vh;

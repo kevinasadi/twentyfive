@@ -2,7 +2,7 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Kontakt</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,37 +11,44 @@
 </head>
 <body>
   <div id="mainnav">
+    <button class="mobilemenuopen" aria-label="Öppna meny" onclick="toggleMenu()">☰</button>
+    <h2>Student Bilar</h2>
+    <nav id="mobileMenu" class="mobile-menu">
+      <ul>
+        <li><a href="index.html">Hitta bilar</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="buyhistory.html">Mina köp</a></li>
+      </ul>
+    </nav>
     <nav>
       <button onclick="location.href='contact.html'"><em>Kontakt</em></button>
       <button onclick="location.href='buyhistory.html'"><em>Mina köp</em></button>
       <button onclick="location.href='index.html'"><em>Hitta bilar</em></button>
     </nav>
   </div>
-  <div id="headermain">
-    <h1 class="byeborderbottom"><em>Kontakt</em></h1>
-  </div>
   <div id="contact-grid">
     <div class="contact-column">
-      <img src="img/asadi.png" alt="Kevin Asadi">
+      <img src="img/asadi.webp" alt="Kevin Asadi">
       <div class="text-container">
         <div class="description"><em>Kevin Asadi</em></div>
         <div class="image-description"><em>Verkställande direktör - kevin.asadi@elev.ga.ntig.se</em></div>
       </div>
     </div>
     <div class="contact-column">
-      <img src="img/mattsson.png" alt="Hugo Mattsson">
+      <img src="img/mattsson.webp" alt="Hugo Mattsson">
       <div class="text-container">
         <div class="description"><em>Hugo Mattsson</em></div>
         <div class="image-description"><em>Teknisk chef - hugo.mattsson@elev.ga.ntig.se</em></div>
       </div>
     </div>
     <div class="contact-column">
-      <img src="img/olsson.png" alt="Bogdan Olsson">
+      <img src="img/olsson.webp" alt="Bogdan Olsson">
       <div class="text-container">
         <div class="description"><em>Bogdan Olsson</em></div>
         <div class="image-description"><em>Marknadschef - bogdan.olsson@elev.ga.ntig.se</em></div>
       </div>
     </div>
   </div>
+  <script src="js/mobilmeny.js"></script>
 </body>
 </html>

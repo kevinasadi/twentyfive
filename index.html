@@ -2,38 +2,44 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Studentbilar</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nosifer&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
-  <title>Studentbilar</title>
 </head>
 <body>
   <div id="mainnav">
+    <button class="mobilemenuopen" aria-label="Öppna meny" onclick="toggleMenu()">☰</button>
+    <h2>Student Bilar</h2>
+    <nav id="mobileMenu" class="mobile-menu">
+      <ul>
+        <li><a href="index.html">Hitta bilar</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="buyhistory.html">Mina köp</a></li>
+      </ul>
+    </nav>
     <nav>
       <button onclick="location.href='contact.html'"><em>Kontakt</em></button>
       <button onclick="location.href='buyhistory.html'"><em>Mina köp</em></button>
       <button onclick="location.href='index.html'"><em>Hitta bilar</em></button>
     </nav>
   </div>
-
   <header id="hero">
-    <div class="hero‑overlay">
-      <h1><em>Välkommen till Studentbilar</em></h1>
+    <div class="hero-overlay">
+      <h1><em>Välkommen till Studentbilar</em></h1>
       <p class="tagline">
-        Din snabbaste väg till en prisvärd första‑bil.<br>
-        Bläddra bland hundratals modeller anpassade för student‑plånboken!
+        Din snabbaste väg till en prisvärd första-bil. Gjort av studenter, för studenter!<br>
+        Bläddra bland hundratals modeller anpassade för student-plånboken!
       </p>
-      <button class="cta" onclick="document.getElementById('price-slider').scrollIntoView({behavior:'smooth'});">
-        Börja leta direkt
-      </button>
+      <button class="cta" onclick="document.getElementById('price-slider').scrollIntoView({behavior:'smooth'});">Hitta bilar nu!</button>
     </div>
   </header>
-
   <div id="price-slider">
     <input type="range" id="myRange" min="10000" max="250000" value="50000" step="100">
     <p id="visiblecolor">Ditt maximala pris är: <span id="rangeValue">10000</span></p>
   </div>
   <div id="cargrid"></div>
   <script src="js/bombaclaat.js"></script>
+  <script src="js/mobilmeny.js"></script>
 </body>
 </html>

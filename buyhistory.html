@@ -2,7 +2,7 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Mina köp</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,16 +11,23 @@
 </head>
 <body>
   <div id="mainnav">
+    <button class="mobilemenuopen" aria-label="Öppna meny" onclick="toggleMenu()">☰</button>
+    <h2>Student Bilar</h2>
+    <nav id="mobileMenu" class="mobile-menu">
+      <ul>
+        <li><a href="index.html">Hitta bilar</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="buyhistory.html">Mina köp</a></li>
+      </ul>
+    </nav>
     <nav>
       <button onclick="location.href='contact.html'"><em>Kontakt</em></button>
       <button onclick="location.href='buyhistory.html'"><em>Mina köp</em></button>
       <button onclick="location.href='index.html'"><em>Hitta bilar</em></button>
     </nav>
   </div>
-  <div id="headermain">
-    <h1 class="byeborderbottom"><em>Mina köp</em></h1>
-  </div>
   <div id="buyhistory-container"></div>
   <script src="js/buyhistory.js"></script>
+  <script src="js/mobilmeny.js"></script>
 </body>
 </html>

@@ -3,11 +3,11 @@ let output = document.getElementById('rangeValue');
 const carGrid = document.getElementById('cargrid');
 
 const cars = [
-  { name: 'cybertruck', price: 200000, image: 'img/cybertruck.png' },
-  { name: 'model3', price: 150000, image: 'img/model3.png' },
-  { name: 'troc', price: 50000, image: 'img/troc.png' },
-  { name: 'v60', price: 15000, image: 'img/V60.png' },
-  { name: 'audiq6', price: 9000, image: 'img/audiq6.png' }
+  { name: 'cybertruck', price: 200000, image: 'img/cybertruck.webp' },
+  { name: 'model3', price: 150000, image: 'img/model3.webp' },
+  { name: 'troc', price: 50000, image: 'img/troc.webp' },
+  { name: 'v60', price: 15000, image: 'img/V60.webp' },
+  { name: 'audiq6', price: 9000, image: 'img/audiq6.webp' }
 ];
 
 function getRandomSundayTime() {
