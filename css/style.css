@@ -368,6 +368,25 @@ nav button:hover {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%;
+  margin: 2rem 0 0; 
+  padding: 1rem 0;
+  background-color: var(--maincolor);
+  color: white;
+  text-align: center;
+  border-top: 2px solid black;
+  box-sizing: border-box;
+}
+
+footer a {
+  color: red;
+}
 
 @media only screen and (max-width: 500px) {
   #cargrid {
